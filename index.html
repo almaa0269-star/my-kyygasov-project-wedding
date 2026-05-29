@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="light" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="supported-color-schemes" content="light" />
   <meta name="theme-color" content="#f7fcff" />
   <title>Свадебное приглашение — Кемене & Ирбис</title>
   <style>
@@ -976,27 +977,45 @@ footer {
         border-radius: 18px;
       }
     }
+
   
-    /* ===== ЖЁСТКИЙ ФИКС СВЕТЛОЙ ТЕМЫ ===== */
+    /* ===== ФИНАЛЬНЫЙ ФИКС: САЙТ ВСЕГДА СВЕТЛЫЙ ===== */
     :root {
-      color-scheme: light !important;
-      forced-color-adjust: none;
+      color-scheme: only light !important;
+      --blue-dark: #0f3558 !important;
+      --blue: #2f80c9 !important;
+      --blue-soft: #8fc7f5 !important;
+      --blue-light: #eaf6ff !important;
+      --white: #ffffff !important;
+      --cream: #fffaf1 !important;
+      --gold: #d6aa5b !important;
+      --text: #24445f !important;
+      forced-color-adjust: none !important;
     }
 
-    html,
-    body {
-      color-scheme: light !important;
+    html {
+      color-scheme: only light !important;
+      background: #f7fcff !important;
       background-color: #f7fcff !important;
+    }
+
+    body {
+      color-scheme: only light !important;
+      background-color: #f7fcff !important;
+      background-image:
+        radial-gradient(circle at top left, rgba(143, 199, 245, 0.50), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(47, 128, 201, 0.24), transparent 36%),
+        linear-gradient(180deg, #f7fcff 0%, #dff2ff 48%, #f9fdff 100%) !important;
       color: #24445f !important;
     }
 
-    body {
-      background-image:
-        radial-gradient(circle at top left, rgba(143, 199, 245, 0.48), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(47, 128, 201, 0.24), transparent 36%),
-        linear-gradient(180deg, #f7fcff 0%, #dff2ff 48%, #f9fdff 100%) !important;
+    *,
+    *::before,
+    *::after {
+      forced-color-adjust: none !important;
     }
 
+    .floating,
     .page,
     header,
     footer {
@@ -1004,12 +1023,34 @@ footer {
       color: #24445f !important;
     }
 
-    .hero-card,
+    .hero-card {
+      background: #ffffff !important;
+      background-image:
+        radial-gradient(circle at top left, rgba(234, 246, 255, 0.95), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(223, 242, 255, 0.95), transparent 42%),
+        linear-gradient(180deg, #ffffff 0%, #f4fbff 100%) !important;
+      border: 1px solid rgba(143, 199, 245, 0.45) !important;
+      box-shadow: 0 24px 60px rgba(27, 96, 150, 0.18) !important;
+      color: #24445f !important;
+      opacity: 1 !important;
+    }
+
     section,
     nav {
-      background: rgba(255, 255, 255, 0.82) !important;
-      border-color: rgba(255, 255, 255, 0.92) !important;
+      background: #ffffff !important;
+      background-image: linear-gradient(180deg, #ffffff 0%, #f4fbff 100%) !important;
+      border: 1px solid rgba(143, 199, 245, 0.45) !important;
       color: #24445f !important;
+      opacity: 1 !important;
+    }
+
+    .detail-card,
+    .gallery-card,
+    .timeline-item,
+    .google-form-card,
+    .rsvp-link-card,
+    .count-box {
+      opacity: 1 !important;
     }
 
     .detail-card,
@@ -1017,121 +1058,128 @@ footer {
     .timeline-item,
     .google-form-card,
     .rsvp-link-card {
-      background: linear-gradient(180deg, #ffffff, #eef8ff) !important;
-      color: #24445f !important;
+      background: #ffffff !important;
+      background-image: linear-gradient(180deg, #ffffff 0%, #eef8ff 100%) !important;
       border-color: rgba(143, 199, 245, 0.45) !important;
+      color: #24445f !important;
+    }
+
+    .count-box,
+    .date-pill,
+    .icon,
+    button,
+    .google-form-fallback {
+      background: #2f80c9 !important;
+      background-image: linear-gradient(135deg, #0f3558, #2f80c9) !important;
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
     }
 
     .photo-placeholder,
     .gallery-image-wrap {
-      background:
-        radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.96), transparent 18%),
+      background-color: #eaf6ff !important;
+      background-image:
+        radial-gradient(circle at 35% 25%, rgba(255,255,255,0.96), transparent 18%),
         radial-gradient(circle at 75% 18%, rgba(214, 170, 91, 0.18), transparent 20%),
         linear-gradient(145deg, #eaf6ff, #b8def8 46%, #fdf7ea) !important;
       color: #0f3558 !important;
     }
 
     h1,
-    h2,
-    h3,
     .section-title,
-    .names,
+    footer .names,
     nav a,
     .detail-card h3,
     .timeline-item h3,
-    .gallery-card p,
-    .section-text,
-    footer p,
-    .subtitle {
-      color: inherit;
-    }
-
-    h1,
-    .section-title,
-    .names,
-    nav a,
-    .detail-card h3,
-    .timeline-item h3 {
+    .map-box h3 {
       color: #0f3558 !important;
+      -webkit-text-fill-color: #0f3558 !important;
     }
 
-    .section-text,
+    .eyebrow,
+    .time {
+      color: #2f80c9 !important;
+      -webkit-text-fill-color: #2f80c9 !important;
+    }
+
+    .amp {
+      color: #d6aa5b !important;
+      -webkit-text-fill-color: #d6aa5b !important;
+    }
+
     .subtitle,
+    .section-text,
     .detail-card p,
     .timeline-item p,
     .gallery-card p,
-    footer p {
+    footer p,
+    .photo-placeholder span {
       color: #446987 !important;
+      -webkit-text-fill-color: #446987 !important;
+    }
+
+    nav a:hover {
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
+      background: #2f80c9 !important;
     }
 
     input,
     select,
     textarea {
-      color-scheme: light !important;
-      background: rgba(255, 255, 255, 0.94) !important;
+      color-scheme: only light !important;
+      background: #ffffff !important;
       color: #0f3558 !important;
-      border-color: rgba(143, 199, 245, 0.7) !important;
+      -webkit-text-fill-color: #0f3558 !important;
+      border-color: rgba(143, 199, 245, 0.70) !important;
+    }
+
+    .map-box {
+      background:
+        linear-gradient(rgba(15, 53, 88, 0.50), rgba(15, 53, 88, 0.40)),
+        radial-gradient(circle at 30% 25%, #8fc7f5, transparent 28%),
+        radial-gradient(circle at 75% 70%, #2f80c9, transparent 30%),
+        linear-gradient(135deg, #eaf6ff, #8fc7f5) !important;
+      color: #ffffff !important;
+    }
+
+    .map-box h3,
+    .map-box p {
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
     }
 
     .google-form-frame {
       background: #ffffff !important;
+      color-scheme: only light !important;
     }
 
     @media (prefers-color-scheme: dark) {
       :root,
       html,
       body {
-        color-scheme: light !important;
+        color-scheme: only light !important;
         background-color: #f7fcff !important;
         color: #24445f !important;
       }
 
       body {
         background-image:
-          radial-gradient(circle at top left, rgba(143, 199, 245, 0.48), transparent 34%),
+          radial-gradient(circle at top left, rgba(143, 199, 245, 0.50), transparent 34%),
           radial-gradient(circle at bottom right, rgba(47, 128, 201, 0.24), transparent 36%),
           linear-gradient(180deg, #f7fcff 0%, #dff2ff 48%, #f9fdff 100%) !important;
       }
 
       .hero-card,
       section,
-      nav {
-        background: rgba(255, 255, 255, 0.82) !important;
-        color: #24445f !important;
-      }
-
+      nav,
       .detail-card,
       .gallery-card,
       .timeline-item,
       .google-form-card,
       .rsvp-link-card {
-        background: linear-gradient(180deg, #ffffff, #eef8ff) !important;
+        background-color: #ffffff !important;
         color: #24445f !important;
-      }
-
-      h1,
-      .section-title,
-      .names,
-      nav a,
-      .detail-card h3,
-      .timeline-item h3 {
-        color: #0f3558 !important;
-      }
-
-      .section-text,
-      .subtitle,
-      .detail-card p,
-      .timeline-item p,
-      .gallery-card p,
-      footer p {
-        color: #446987 !important;
-      }
-
-      input,
-      select,
-      textarea {
-        background: rgba(255, 255, 255, 0.94) !important;
-        color: #0f3558 !important;
       }
     }
 
