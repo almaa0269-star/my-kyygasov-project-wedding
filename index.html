@@ -1319,6 +1319,13 @@ footer {
       }
     }
 
+  
+    /* Дополнительный фикс против принудительного затемнения мобильным браузером */
+    html {
+      filter: contrast(99.9%) !important;
+      backdrop-filter: blur(0px) !important;
+    }
+
   </style>
 </head>
 
