@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1183,10 +1183,162 @@ footer {
       }
     }
 
+  
+    /* ===== СИСТЕМА ТЕМ =====
+       В коде есть 2 темы: light и dark.
+       Но сайт всегда запускается как light, даже если у телефона включена тёмная тема.
+       Чтобы вручную проверить тёмную тему, можно поменять в html:
+       data-theme="light" на data-theme="dark".
+    */
+
+    html[data-theme="light"] {
+      --site-bg-1: #f7fcff;
+      --site-bg-2: #dff2ff;
+      --site-bg-3: #f9fdff;
+      --card-bg: #ffffff;
+      --card-bg-soft: #eef8ff;
+      --main-text: #24445f;
+      --heading-text: #0f3558;
+      --muted-text: #446987;
+      --accent-main: #2f80c9;
+      --accent-soft: #8fc7f5;
+      --accent-gold: #d6aa5b;
+    }
+
+    html[data-theme="dark"] {
+      --site-bg-1: #07182b;
+      --site-bg-2: #0f3558;
+      --site-bg-3: #10243a;
+      --card-bg: #10243a;
+      --card-bg-soft: #163f66;
+      --main-text: #d9efff;
+      --heading-text: #eaf6ff;
+      --muted-text: #b8def8;
+      --accent-main: #8fc7f5;
+      --accent-soft: #2f80c9;
+      --accent-gold: #d6aa5b;
+    }
+
+    /* По умолчанию и при системной тёмной теме всё равно применяем light */
+    html,
+    body {
+      color-scheme: only light !important;
+    }
+
+    body {
+      background-color: var(--site-bg-1) !important;
+      background-image:
+        radial-gradient(circle at top left, rgba(143, 199, 245, 0.50), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(47, 128, 201, 0.24), transparent 36%),
+        linear-gradient(180deg, var(--site-bg-1) 0%, var(--site-bg-2) 48%, var(--site-bg-3) 100%) !important;
+      color: var(--main-text) !important;
+    }
+
+    .hero-card,
+    section,
+    nav {
+      background: var(--card-bg) !important;
+      background-image: linear-gradient(180deg, var(--card-bg) 0%, var(--card-bg-soft) 100%) !important;
+      color: var(--main-text) !important;
+      border-color: rgba(143, 199, 245, 0.45) !important;
+    }
+
+    .detail-card,
+    .gallery-card,
+    .timeline-item,
+    .google-form-card,
+    .rsvp-link-card {
+      background: var(--card-bg) !important;
+      background-image: linear-gradient(180deg, var(--card-bg) 0%, var(--card-bg-soft) 100%) !important;
+      color: var(--main-text) !important;
+      border-color: rgba(143, 199, 245, 0.45) !important;
+    }
+
+    h1,
+    .section-title,
+    footer .names,
+    nav a,
+    .detail-card h3,
+    .timeline-item h3 {
+      color: var(--heading-text) !important;
+      -webkit-text-fill-color: var(--heading-text) !important;
+    }
+
+    .subtitle,
+    .section-text,
+    .detail-card p,
+    .timeline-item p,
+    .gallery-card p,
+    footer p {
+      color: var(--muted-text) !important;
+      -webkit-text-fill-color: var(--muted-text) !important;
+    }
+
+    .eyebrow,
+    .time {
+      color: var(--accent-main) !important;
+      -webkit-text-fill-color: var(--accent-main) !important;
+    }
+
+    .amp {
+      color: var(--accent-gold) !important;
+      -webkit-text-fill-color: var(--accent-gold) !important;
+    }
+
+    input,
+    select,
+    textarea {
+      color-scheme: only light !important;
+      background: #ffffff !important;
+      color: #0f3558 !important;
+      -webkit-text-fill-color: #0f3558 !important;
+    }
+
+    .google-form-frame {
+      background: #ffffff !important;
+      color-scheme: only light !important;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html {
+        color-scheme: only light !important;
+      }
+
+      html:not([data-theme="dark"]) {
+        --site-bg-1: #f7fcff;
+        --site-bg-2: #dff2ff;
+        --site-bg-3: #f9fdff;
+        --card-bg: #ffffff;
+        --card-bg-soft: #eef8ff;
+        --main-text: #24445f;
+        --heading-text: #0f3558;
+        --muted-text: #446987;
+        --accent-main: #2f80c9;
+        --accent-soft: #8fc7f5;
+        --accent-gold: #d6aa5b;
+      }
+    }
+
   </style>
 </head>
 
 <body>
+
+  <script>
+    // В коде есть light/dark темы, но для гостей сайт всегда запускается в светлой теме.
+    // Это защищает сайт от системной тёмной темы телефона или браузера.
+    (function forceLightTheme() {
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.style.colorScheme = 'light';
+
+      try {
+        localStorage.setItem('wedding-site-theme', 'light');
+      } catch (error) {
+        // Если localStorage недоступен, сайт всё равно останется светлым.
+      }
+    })();
+  </script>
+
   <div class="floating" aria-hidden="true">
     <div class="bubble"></div>
     <div class="bubble"></div>
