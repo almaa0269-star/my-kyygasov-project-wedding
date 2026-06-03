@@ -1113,6 +1113,159 @@
       }
     }
 
+
+    /* Компактнее мобильная версия */
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 18px, 1120px) !important;
+      }
+
+      .nav-inner {
+        min-height: 58px !important;
+      }
+
+      .logo {
+        font-size: 19px !important;
+      }
+
+      .hero {
+        padding-top: 22px !important;
+        padding-bottom: 16px !important;
+      }
+
+      .hero-card {
+        padding: 20px !important;
+        gap: 18px !important;
+        border-radius: 22px !important;
+      }
+
+      h1 {
+        font-size: 42px !important;
+        line-height: 0.92 !important;
+      }
+
+      h2 {
+        font-size: 30px !important;
+      }
+
+      .tagline {
+        margin: 18px 0 !important;
+        font-size: 17px !important;
+      }
+
+      .photo-card {
+        min-height: 240px !important;
+        border-radius: 20px !important;
+      }
+
+      .details {
+        margin-top: 12px !important;
+        border-radius: 20px !important;
+      }
+
+      .detail {
+        min-height: auto !important;
+        padding: 16px !important;
+        gap: 12px !important;
+      }
+
+      .detail .icon,
+      .icon {
+        width: 36px !important;
+        height: 36px !important;
+        flex-basis: 36px !important;
+        font-size: 16px !important;
+      }
+
+      section {
+        padding: 28px 0 !important;
+      }
+
+      .story,
+      .countdown,
+      .location {
+        padding-top: 12px !important;
+      }
+
+      .countdown-card,
+      .schedule-box,
+      .dress-box,
+      .location-box {
+        padding: 20px !important;
+        border-radius: 22px !important;
+      }
+
+      .count-box {
+        padding: 18px 12px !important;
+        border-radius: 18px !important;
+      }
+
+      .count-box strong {
+        font-size: 34px !important;
+      }
+
+      .timeline-item {
+        padding: 16px !important;
+        gap: 10px !important;
+        border-radius: 18px !important;
+      }
+
+      .timeline-time {
+        font-size: 22px !important;
+      }
+
+      .section-head {
+        margin-bottom: 18px !important;
+        gap: 14px !important;
+      }
+
+      .lead {
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+      }
+
+      .palette {
+        gap: 12px !important;
+        margin-top: 18px !important;
+      }
+
+      .palette-item {
+        min-height: auto !important;
+        padding: 14px !important;
+        border-radius: 18px !important;
+      }
+
+      .palette-dot {
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 12px !important;
+      }
+
+      .location-address {
+        margin-top: 16px !important;
+        padding: 16px !important;
+        border-radius: 18px !important;
+      }
+
+      .location-actions {
+        margin-top: 16px !important;
+      }
+
+      .map-card,
+      .map-card iframe {
+        min-height: 250px !important;
+        border-radius: 18px !important;
+      }
+
+      .footer {
+        padding: 30px 0 24px !important;
+      }
+
+      .footer-title {
+        font-size: 25px !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -1122,7 +1275,6 @@
       <a href="#top" class="logo">И & К</a>
 
       <nav class="menu" aria-label="Главное меню">
-        <a href="#poll">Опрос</a>
         <a href="#story">История</a>
         <a href="#countdown">Таймер</a>
         <a href="#schedule">Программа</a>
@@ -1131,7 +1283,6 @@
         <a href="#details">Детали</a>
       </nav>
 
-      <a class="btn" href="#poll">Опрос</a>
     </div>
   </header>
 
@@ -1151,7 +1302,6 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="#poll">Пройти опрос</a>
             <a class="btn light" href="#countdown">До свадьбы</a>
           </div>
         </div>
@@ -1182,7 +1332,7 @@
           <div class="icon">⌖</div>
           <div>
             <small>Место</small>
-            <strong>Республика Алтай<br />Усть-Кан</strong>
+            <strong>Республика Алтай<br />Турбаза Ирбизек</strong>
           </div>
         </div>
 
@@ -1303,32 +1453,6 @@
           </p>
         </div>
 
-        <div class="cards">
-          <article class="card accent">
-            <div class="icon">◌</div>
-            <h3>Нежно</h3>
-            <p>Молочный, ivory, кремовый и светло-бежевый — красивая светлая база.</p>
-          </article>
-
-          <article class="card">
-            <div class="icon">◌</div>
-            <h3>Голубой</h3>
-            <p>Небесный и пыльно-голубой хорошо сочетаются со стилем сайта.</p>
-          </article>
-
-          <article class="card accent">
-            <div class="icon">◌</div>
-            <h3>Navy</h3>
-            <p>Глубокий синий подойдёт для костюмов, платьев и аксессуаров.</p>
-          </article>
-
-          <article class="card">
-            <div class="icon">◌</div>
-            <h3>Шампань</h3>
-            <p>Тёплый золотистый акцент красиво дополняет синий.</p>
-          </article>
-        </div>
-
         <div class="palette">
           <div class="palette-item">
             <div class="palette-dot dot-ivory"></div>
@@ -1369,20 +1493,20 @@
           <div class="kicker">Как добраться</div>
           <h2>Яндекс Навигатор</h2>
           <p class="lead" style="margin-top: 18px;">
-            Точка установлена на село Усть-Кан, Республика Алтай.
+            Точка установлена на турбазу Ирбизек, Усть-Канский район, Республика Алтай.
             Нажмите кнопку, чтобы открыть маршрут в Яндекс Навигаторе или Яндекс Картах.
           </p>
 
           <div class="location-address">
-            <strong>Республика Алтай, Усть-Кан</strong>
-            Координаты точки: 50.929389, 84.762272
+            <strong>Республика Алтай, Усть-Канский район, турбаза Ирбизек</strong>
+            Точный ориентир для гостей: Турбаза Ирбизек
           </div>
 
           <div class="location-actions">
-            <a class="btn" href="yandexnavi://build_route_on_map?lat_to=50.929389&lon_to=84.762272">
+            <a class="btn" href="https://yandex.ru/maps/?mode=search&text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%90%D0%BB%D1%82%D0%B0%D0%B9%20%D0%A3%D1%81%D1%82%D1%8C-%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%20%D0%A2%D1%83%D1%80%D0%B1%D0%B0%D0%B7%D0%B0%20%D0%98%D1%80%D0%B1%D0%B8%D0%B7%D0%B5%D0%BA&z=13" target="_blank" rel="noopener">
               Открыть Навигатор
             </a>
-            <a class="btn light" href="https://yandex.ru/maps/?ll=84.762272%2C50.929389&mode=search&text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%90%D0%BB%D1%82%D0%B0%D0%B9%2C%20%D0%A3%D1%81%D1%82%D1%8C-%D0%9A%D0%B0%D0%BD&z=13" target="_blank" rel="noopener">
+            <a class="btn light" href="https://yandex.ru/maps/?mode=search&text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%90%D0%BB%D1%82%D0%B0%D0%B9%20%D0%A3%D1%81%D1%82%D1%8C-%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%20%D0%A2%D1%83%D1%80%D0%B1%D0%B0%D0%B7%D0%B0%20%D0%98%D1%80%D0%B1%D0%B8%D0%B7%D0%B5%D0%BA&z=13" target="_blank" rel="noopener">
               Открыть Яндекс Карты
             </a>
           </div>
@@ -1390,37 +1514,20 @@
 
         <div class="map-card">
           <iframe
-            src="https://yandex.ru/map-widget/v1/?ll=84.762272%2C50.929389&mode=search&text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%90%D0%BB%D1%82%D0%B0%D0%B9%2C%20%D0%A3%D1%81%D1%82%D1%8C-%D0%9A%D0%B0%D0%BD&z=13"
+            src="https://yandex.ru/map-widget/v1/?mode=search&text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%90%D0%BB%D1%82%D0%B0%D0%B9%20%D0%A3%D1%81%D1%82%D1%8C-%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%20%D0%A2%D1%83%D1%80%D0%B1%D0%B0%D0%B7%D0%B0%20%D0%98%D1%80%D0%B1%D0%B8%D0%B7%D0%B5%D0%BA&z=13"
             allowfullscreen="true">
           </iframe>
         </div>
       </div>
     </section>
 
-    <section class="poll" id="poll">
-      <div class="page poll-box">
-        <div>
-          <div class="kicker">Опрос для гостей</div>
-          <h2>Подтвердите присутствие</h2>
-          <p class="lead" style="margin-top: 18px;">
-            Пожалуйста, пройдите короткий опрос, чтобы мы знали, сможете ли вы быть с нами 22 августа 2026 года.
-          </p>
-        </div>
-
-        <div class="poll-action">
-          <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc4H4E2X_tOJtjty2KKPr_Q4lavnJAaPkswv1u4NepUO7K0OA/viewform" target="_blank" rel="noopener">
-            Пройти опрос
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
+</main>
 
   <footer class="footer">
     <div class="page">
       <div class="footer-title">Ирбис и Кемене</div>
       <p class="footer-note">
-        22 августа 2026 · Название площадки надо поменять<br />
+        22 августа 2026 · Республика Алтай, Усть-Канский район, турбаза Ирбизек<br />
         С любовью ждём вас на нашем празднике.
       </p>
     </div>
