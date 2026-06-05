@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=1200" />
   <meta name="color-scheme" content="only light" />
   <meta name="supported-color-schemes" content="light" />
   <meta name="theme-color" content="#f7fbff" />
@@ -1266,6 +1266,220 @@
       }
     }
 
+
+    /* Отключение мобильной версии: сайт всегда выглядит как ПК */
+    body {
+      min-width: 1200px;
+    }
+
+    .gallery-box {
+      padding: clamp(28px, 5vw, 52px);
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at top left, rgba(201, 222, 239, 0.62), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(201, 163, 99, 0.20), transparent 36%),
+        linear-gradient(180deg, #ffffff 0%, #edf7ff 100%);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .gallery-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 26px;
+    }
+
+    .gallery-frame {
+      width: 100%;
+      height: 640px;
+      border: 0;
+      display: block;
+      border-radius: 30px;
+      background: #ffffff;
+      box-shadow: 0 18px 44px rgba(25, 54, 83, 0.10);
+    }
+
+
+    .vk-gallery-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 34px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at top left, rgba(201, 222, 239, 0.72), transparent 34%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 241, 0.84));
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 44px rgba(25, 54, 83, 0.10);
+    }
+
+    .vk-gallery-card h3 {
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 400;
+    }
+
+    .vk-gallery-card p {
+      max-width: 660px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .vk-gallery-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+
+    /* Галерея ВК с просмотром фотографий */
+    body {
+      min-width: 1200px;
+    }
+
+    .gallery-box {
+      padding: clamp(28px, 5vw, 52px);
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at top left, rgba(201, 222, 239, 0.62), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(201, 163, 99, 0.20), transparent 36%),
+        linear-gradient(180deg, #ffffff 0%, #edf7ff 100%);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .gallery-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 26px;
+    }
+
+    .vk-gallery-card {
+      padding: 28px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at top left, rgba(201, 222, 239, 0.72), transparent 34%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 241, 0.84));
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 44px rgba(25, 54, 83, 0.10);
+    }
+
+    .gallery-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .vk-gallery-status {
+      margin-bottom: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .vk-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .vk-photo {
+      position: relative;
+      height: 210px;
+      overflow: hidden;
+      border: 0;
+      border-radius: 22px;
+      background: var(--blue-light);
+      box-shadow: 0 14px 34px rgba(25, 54, 83, 0.10);
+      cursor: pointer;
+    }
+
+    .vk-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.28s ease;
+    }
+
+    .vk-photo:hover img {
+      transform: scale(1.045);
+    }
+
+    .vk-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 34px;
+      background: rgba(16, 35, 59, 0.88);
+    }
+
+    .vk-lightbox.open {
+      display: flex;
+    }
+
+    .vk-lightbox img {
+      max-width: 88vw;
+      max-height: 84vh;
+      object-fit: contain;
+      border-radius: 18px;
+      box-shadow: 0 26px 90px rgba(0, 0, 0, 0.38);
+      background: #ffffff;
+    }
+
+    .vk-lightbox-btn {
+      position: absolute;
+      top: 50%;
+      width: 54px;
+      height: 54px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--blue-dark);
+      font-size: 34px;
+      line-height: 1;
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .vk-lightbox-prev {
+      left: 34px;
+    }
+
+    .vk-lightbox-next {
+      right: 34px;
+    }
+
+    .vk-lightbox-close {
+      position: absolute;
+      right: 34px;
+      top: 26px;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--blue-dark);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
   </style>
 </head>
 
@@ -1275,11 +1489,11 @@
       <a href="#top" class="logo">И & К</a>
 
       <nav class="menu" aria-label="Главное меню">
-        <a href="#story">История</a>
         <a href="#countdown">Таймер</a>
         <a href="#schedule">Программа</a>
         <a href="#dresscode">Дресс-код</a>
         <a href="#location">Навигатор</a>
+        <a href="#gallery">Галерея</a>
         <a href="#details">Детали</a>
       </nav>
 
@@ -1345,38 +1559,7 @@
         </div>
       </div>
     </section>
-
-
-
-
-    <section class="story" id="story">
-      <div class="page story-box">
-        <div class="story-grid">
-          <div class="story-text">
-            <div class="kicker">Наша история</div>
-            <h2>С тех пор<br />навсегда</h2>
-            <p class="lead">
-              Когда-то мы были детьми с мечтами, смешными фотографиями и большим будущим впереди.
-              Теперь эти истории встретились вместе.
-            </p>
-          </div>
-
-          <div class="polaroids">
-            <article class="polaroid">
-              <img class="real-photo" src="2.jpg" alt="Детское фото Kemene">
-              <div class="polaroid-name">Кемене</div>
-            </article>
-
-            <article class="polaroid">
-              <img class="real-photo" src="3.jpg" alt="Детское фото Irbis">
-              <div class="polaroid-name">Ирбис</div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="countdown" id="countdown">
+<section class="countdown" id="countdown">
       <div class="page countdown-card">
         <div class="kicker">Обратный отсчёт</div>
         <h2>До свадьбы осталось</h2>
@@ -1409,31 +1592,28 @@
       <div class="page schedule-box">
         <div class="kicker">День свадьбы</div>
         <h2>Программа</h2>
-        <p class="lead" style="margin-top: 18px;">
-          Время надо поменять в коде, если расписание будет другим.
-        </p>
-
         <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-time">11:00–12:00</div>
-            <div>
-              <h3>Алтай той</h3>
-              <p>Традиционная часть праздника.</p>
-            </div>
-          </div>
 
           <div class="timeline-item">
             <div class="timeline-time">15:30–16:00</div>
             <div>
-              <h3>Роспись</h3>
-              <p>Торжественная регистрация брака.</p>
+              <h3>Сбор гостей</h3>
+              <p>Торжественная регистрация брака. ЗАГСЕ в с.Усть-Кан</p>
             </div>
           </div>
+          <div class="timeline-item">
+            <div class="timeline-time">15:30–16:00</div>
+            <div>
+              <h3>Торжественная регистрация брака.</h3>
+              <p> ЗАГСе в с.Усть-Кан</p>
+            </div>
+          </div>
+          
 
           <div class="timeline-item">
             <div class="timeline-time">16:00</div>
             <div>
-              <h3>Банкет</h3>
+              <h3>Свадебный банкет</h3>
               <p>Праздничный банкет.</p>
             </div>
           </div>
@@ -1446,17 +1626,13 @@
         <div class="section-head">
           <div>
             <div class="kicker">Дресс-код</div>
-            <h2>Синий акцент</h2>
           </div>
-          <p class="lead">
-            Будем рады, если в ваших образах появятся светлые оттенки, голубой, navy или тёплый champagne gold.
-          </p>
         </div>
 
         <div class="palette">
           <div class="palette-item">
             <div class="palette-dot dot-ivory"></div>
-            <strong>Ivory</strong>
+            <strong>Белый</strong>
             <span>молочный, кремовый, светлый беж</span>
           </div>
 
@@ -1474,7 +1650,7 @@
 
           <div class="palette-item">
             <div class="palette-dot dot-navy"></div>
-            <strong>Navy</strong>
+            <strong>Синий</strong>
             <span>глубокий синий для элегантных образов</span>
           </div>
 
@@ -1487,18 +1663,66 @@
       </div>
     </section>
 
-    <section class="location" id="location">
+    <section id="gallery">
+      <div class="page gallery-box">
+        <div class="gallery-head">
+          <div>
+            <div class="kicker">Галерея</div>
+            <h2>Фото гостей</h2>
+            <p class="lead" style="margin-top: 18px;">
+              Фотографии загружаются из свадебного альбома ВКонтакте.
+              Нажмите на фото, чтобы открыть просмотр и листать снимки.
+            </p>
+          </div>
+
+          <div class="gallery-actions">
+            <a class="btn" href="https://vk.com/album-237681624_309119439" target="_blank" rel="noopener">
+              Загрузить фото
+            </a>
+            <a class="btn light" href="https://vk.com/album-237681624_309119439" target="_blank" rel="noopener">
+              Открыть альбом
+            </a>
+          </div>
+        </div>
+
+        <div class="vk-gallery-card">
+          <div id="vkGalleryStatus" class="vk-gallery-status">
+            Загрузка фотографий из ВК...
+          </div>
+
+          <div id="vkPhotoGrid" class="vk-photo-grid" aria-label="Фотографии из ВК"></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="vkLightbox" class="vk-lightbox" aria-label="Просмотр фотографии">
+      <button class="vk-lightbox-close" type="button" aria-label="Закрыть">×</button>
+      <button class="vk-lightbox-btn vk-lightbox-prev" type="button" aria-label="Предыдущее фото">‹</button>
+      <img id="vkLightboxImage" src="" alt="Фото из свадебного альбома">
+      <button class="vk-lightbox-btn vk-lightbox-next" type="button" aria-label="Следующее фото">›</button>
+    </div>
+
+
+<div id="vkLightbox" class="vk-lightbox" aria-label="Просмотр фотографии">
+      <button class="vk-lightbox-close" type="button" aria-label="Закрыть">×</button>
+      <button class="vk-lightbox-btn vk-lightbox-prev" type="button" aria-label="Предыдущее фото">‹</button>
+      <img id="vkLightboxImage" src="" alt="Фото из свадебного альбома">
+      <button class="vk-lightbox-btn vk-lightbox-next" type="button" aria-label="Следующее фото">›</button>
+    </div>
+
+
+<section class="location" id="location">
       <div class="page location-box">
         <div class="location-info">
           <div class="kicker">Как добраться</div>
           <h2>Яндекс Навигатор</h2>
           <p class="lead" style="margin-top: 18px;">
-            Точка установлена на турбазу Ирбизек, Усть-Канский район, Республика Алтай.
+            Республика Алтай,, Усть-Канский район, Турбаза Ирбизек.
             Нажмите кнопку, чтобы открыть маршрут в Яндекс Навигаторе или Яндекс Картах.
           </p>
 
           <div class="location-address">
-            <strong>Республика Алтай, Усть-Канский район, турбаза Ирбизек</strong>
+            <strong>Республика Алтай, Усть-Канский район, Турбаза Ирбизек</strong>
             Точный ориентир для гостей: Турбаза Ирбизек
           </div>
 
@@ -1569,5 +1793,6 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
+  <script src="vk-gallery.js"></script>
 </body>
 </html>
