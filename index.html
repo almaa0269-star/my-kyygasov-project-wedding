@@ -532,7 +532,7 @@
     .dot-blue { background: #c9deef; }
     .dot-dusty { background: #8fb6d7; }
     .dot-navy { background: #243f5f; }
-    .dot-gold { background: #c9a363; }
+    .dot-gold { background: #6b3f24; }
 
     .palette-item strong {
       display: block;
@@ -1681,35 +1681,125 @@
       }
     }
 
+
+    /* Правки главного экрана и дресс-кода */
+    .hero-content .eyebrow {
+      text-align: center;
+      font-size: 16px;
+      letter-spacing: 0.28em;
+      margin-bottom: 28px;
+    }
+
+    .hero-names {
+      text-align: center;
+      text-transform: none;
+      letter-spacing: 0.01em;
+      font-size: clamp(64px, 7.8vw, 104px);
+      line-height: 0.96;
+    }
+
+    .hero-names span {
+      display: block;
+    }
+
+    .hero-names .amp {
+      display: block;
+      margin: 8px 0 10px;
+      color: #8b5e3c;
+      font-size: 0.58em;
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: lowercase;
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+    }
+
+    .dot-gold { background: #6b3f24; }
+
+    @media (max-width: 620px) {
+      .hero-content .eyebrow {
+        width: 100%;
+        text-align: center;
+        font-size: 14px !important;
+        letter-spacing: 0.18em !important;
+        margin-bottom: 16px !important;
+      }
+
+      .hero-names {
+        font-size: 46px !important;
+        line-height: 0.98 !important;
+        text-align: center !important;
+      }
+
+      .hero-names .amp {
+        margin: 4px 0 6px !important;
+        font-size: 0.52em !important;
+      }
+
+      #dresscode .dress-box {
+        padding: 14px !important;
+      }
+
+      #dresscode .section-head {
+        margin-bottom: 10px !important;
+      }
+
+      #dresscode .kicker {
+        text-align: center;
+        width: 100%;
+      }
+
+      #dresscode .palette {
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 6px !important;
+        margin-top: 8px !important;
+      }
+
+      #dresscode .palette-item {
+        min-height: 86px !important;
+        padding: 7px 4px !important;
+        border-radius: 13px !important;
+        text-align: center;
+      }
+
+      #dresscode .palette-dot {
+        width: 26px !important;
+        height: 26px !important;
+        margin: 0 auto 6px !important;
+        border-width: 3px !important;
+      }
+
+      #dresscode .palette-item strong {
+        font-size: 11px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 4px !important;
+      }
+
+      #dresscode .palette-item span {
+        display: none !important;
+      }
+    }
+
+
+    /* Коричневый образец в дресс-коде */
+    .dot-gold {
+      background: #6b3f24 !important;
+    }
+
   </style>
 </head>
 
 <body>
-  <header class="nav">
-    <div class="page nav-inner">
-      <a href="#top" class="logo">И & К</a>
-
-      <nav class="menu" aria-label="Главное меню">
-        <a href="#countdown">Таймер</a>
-        <a href="#schedule">Программа</a>
-        <a href="#dresscode">Дресс-код</a>
-        <a href="#location">Навигатор</a>
-        <a href="#wedding-photos">Фото</a>
-        <a href="#details">Детали</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <main id="top">
+<main id="top">
     <section class="hero">
       <div class="page hero-card">
         <div class="hero-content">
           <div class="eyebrow">Свадебное приглашение</div>
 
-          <h1>
-            Ирбис<br />
-            <span class="amp">и</span>Кемене
+          <h1 class="hero-names">
+            <span style="font-style: italic;">Ирбис</span>
+            <span class="amp">и</span>
+            <span style="font-style: italic;">Кемене</span>
           </h1>
 
           <p class="tagline">
@@ -1747,7 +1837,7 @@
           <div class="icon">⌖</div>
           <div>
             <small>Место</small>
-            <strong>Республика Алтай<br />Турбаза Ирбизек</strong>
+            <strong>с.Усть-Кан<br />Турбаза Ирбизек</strong>
           </div>
         </div>
 
@@ -1849,8 +1939,8 @@
 
           <div class="palette-item">
             <div class="palette-dot dot-gold"></div>
-            <strong>Шампань</strong>
-            <span>тёплые золотистые детали</span>
+            <strong>Коричневый</strong>
+            <span>тёплые коричневые детали</span>
           </div>
         </div>
       </div>
