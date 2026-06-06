@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=1200" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="only light" />
   <meta name="supported-color-schemes" content="light" />
   <meta name="theme-color" content="#f7fbff" />
@@ -877,8 +877,6 @@
       }
     }
 
-
-
     .real-photo {
       width: 100%;
       height: 100%;
@@ -1053,7 +1051,6 @@
       }
     }
 
-
     /* Компактные отступы между блоками */
     section {
       padding: 48px 0 !important;
@@ -1112,7 +1109,6 @@
         padding-bottom: 42px !important;
       }
     }
-
 
     /* Компактнее мобильная версия */
     @media (max-width: 620px) {
@@ -1265,14 +1261,7 @@
         font-size: 25px !important;
       }
     }
-
-
-    /* Отключение мобильной версии: сайт всегда выглядит как ПК */
-    body {
-      min-width: 1200px;
-    }
-
-    .gallery-box {
+.gallery-box {
       padding: clamp(28px, 5vw, 52px);
       border-radius: 38px;
       background:
@@ -1291,17 +1280,6 @@
       align-items: end;
       margin-bottom: 26px;
     }
-
-    .gallery-frame {
-      width: 100%;
-      height: 640px;
-      border: 0;
-      display: block;
-      border-radius: 30px;
-      background: #ffffff;
-      box-shadow: 0 18px 44px rgba(25, 54, 83, 0.10);
-    }
-
 
     .vk-gallery-card {
       display: grid;
@@ -1339,14 +1317,17 @@
       justify-content: flex-end;
     }
 
-
-    /* Галерея ВК с просмотром фотографий */
-    body {
-      min-width: 1200px;
+    /* Раздел свадебных фото с QR */
+    .wedding-photos {
+      padding-top: 24px;
     }
 
-    .gallery-box {
-      padding: clamp(28px, 5vw, 52px);
+    .wedding-photos-box {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+      padding: clamp(26px, 5vw, 46px);
       border-radius: 38px;
       background:
         radial-gradient(circle at top left, rgba(201, 222, 239, 0.62), transparent 34%),
@@ -1357,127 +1338,347 @@
       overflow: hidden;
     }
 
-    .gallery-head {
+    .qr-grid {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: end;
-      margin-bottom: 26px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .vk-gallery-card {
-      padding: 28px;
-      border-radius: 30px;
-      background:
-        radial-gradient(circle at top left, rgba(201, 222, 239, 0.72), transparent 34%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 241, 0.84));
+    .qr-card {
+      display: block;
+      padding: 20px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.82);
       border: 1px solid var(--line);
       box-shadow: 0 18px 44px rgba(25, 54, 83, 0.10);
+      text-align: center;
+      transition: 0.25s ease;
     }
 
-    .gallery-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 12px;
+    .qr-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 54px rgba(25, 54, 83, 0.14);
     }
 
-    .vk-gallery-status {
-      margin-bottom: 18px;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    .vk-photo-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .vk-photo {
-      position: relative;
-      height: 210px;
-      overflow: hidden;
-      border: 0;
-      border-radius: 22px;
-      background: var(--blue-light);
-      box-shadow: 0 14px 34px rgba(25, 54, 83, 0.10);
-      cursor: pointer;
-    }
-
-    .vk-photo img {
+    .qr-card img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       display: block;
-      transition: transform 0.28s ease;
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(201, 222, 239, 0.92), rgba(255, 255, 255, 0.72)),
+        repeating-linear-gradient(45deg, rgba(92, 135, 176, 0.08) 0 8px, transparent 8px 16px);
+      border: 1px dashed rgba(92, 135, 176, 0.42);
     }
 
-    .vk-photo:hover img {
-      transform: scale(1.045);
+    .qr-card strong {
+      display: block;
+      margin-top: 14px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      font-weight: 400;
     }
 
-    .vk-lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 34px;
-      background: rgba(16, 35, 59, 0.88);
+    .qr-card span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
     }
 
-    .vk-lightbox.open {
-      display: flex;
+    /* Мобильная версия: компактные секции */
+    @media (max-width: 920px) {
+      .menu {
+        display: flex !important;
+        gap: 14px !important;
+        font-size: 10px !important;
+        letter-spacing: 0.08em !important;
+        flex-wrap: wrap !important;
+        justify-content: flex-end !important;
+      }
+
+      .hero-card,
+      .location-box,
+      .wedding-photos-box {
+        grid-template-columns: 1fr !important;
+      }
+
+      .details,
+      .countdown-grid,
+      .palette {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      .photo-card {
+        min-height: 320px !important;
+      }
     }
 
-    .vk-lightbox img {
-      max-width: 88vw;
-      max-height: 84vh;
-      object-fit: contain;
-      border-radius: 18px;
-      box-shadow: 0 26px 90px rgba(0, 0, 0, 0.38);
-      background: #ffffff;
-    }
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 18px, 1120px) !important;
+      }
 
-    .vk-lightbox-btn {
-      position: absolute;
-      top: 50%;
-      width: 54px;
-      height: 54px;
-      border: 0;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.92);
-      color: var(--blue-dark);
-      font-size: 34px;
-      line-height: 1;
-      cursor: pointer;
-      transform: translateY(-50%);
-    }
+      .nav {
+        position: relative !important;
+      }
 
-    .vk-lightbox-prev {
-      left: 34px;
-    }
+      .nav-inner {
+        min-height: auto !important;
+        padding: 12px 0 !important;
+        align-items: flex-start !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+      }
 
-    .vk-lightbox-next {
-      right: 34px;
-    }
+      .logo {
+        font-size: 19px !important;
+      }
 
-    .vk-lightbox-close {
-      position: absolute;
-      right: 34px;
-      top: 26px;
-      width: 48px;
-      height: 48px;
-      border: 0;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.92);
-      color: var(--blue-dark);
-      font-size: 28px;
-      cursor: pointer;
+      .menu {
+        width: 100% !important;
+        justify-content: flex-start !important;
+        gap: 10px 14px !important;
+        font-size: 10px !important;
+      }
+
+      section {
+        padding: 20px 0 !important;
+      }
+
+      .hero {
+        padding: 18px 0 14px !important;
+      }
+
+      .hero-card {
+        min-height: auto !important;
+        padding: 18px !important;
+        gap: 16px !important;
+        border-radius: 22px !important;
+      }
+
+      .hero-card::before {
+        font-size: 110px !important;
+      }
+
+      .hero-card::after {
+        font-size: 30px !important;
+        right: 18px !important;
+        bottom: 16px !important;
+      }
+
+      .eyebrow {
+        margin-bottom: 12px !important;
+        font-size: 10px !important;
+      }
+
+      h1 {
+        font-size: 40px !important;
+        line-height: 0.92 !important;
+      }
+
+      h2 {
+        font-size: 28px !important;
+        line-height: 1.04 !important;
+      }
+
+      .tagline {
+        margin: 14px 0 !important;
+        font-size: 16px !important;
+        line-height: 1.45 !important;
+      }
+
+      .btn {
+        min-height: 40px !important;
+        padding: 0 18px !important;
+        font-size: 10px !important;
+      }
+
+      .photo-card {
+        min-height: 220px !important;
+        border-radius: 18px !important;
+      }
+
+      .details {
+        grid-template-columns: repeat(2, 1fr) !important;
+        margin-top: 10px !important;
+        border-radius: 18px !important;
+      }
+
+      .detail {
+        min-height: auto !important;
+        padding: 12px !important;
+        gap: 10px !important;
+      }
+
+      .detail .icon,
+      .icon {
+        width: 34px !important;
+        height: 34px !important;
+        flex-basis: 34px !important;
+        font-size: 15px !important;
+      }
+
+      .detail small {
+        font-size: 9px !important;
+      }
+
+      .detail strong {
+        font-size: 14px !important;
+      }
+
+      .countdown-card,
+      .schedule-box,
+      .dress-box,
+      .location-box,
+      .wedding-photos-box {
+        padding: 18px !important;
+        border-radius: 22px !important;
+      }
+
+      .kicker {
+        margin-bottom: 8px !important;
+        font-size: 18px !important;
+      }
+
+      .lead {
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+      }
+
+      .countdown-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px !important;
+        margin-top: 14px !important;
+      }
+
+      .count-box {
+        padding: 12px 6px !important;
+        border-radius: 14px !important;
+      }
+
+      .count-box strong {
+        font-size: 24px !important;
+      }
+
+      .count-box span {
+        margin-top: 6px !important;
+        font-size: 8px !important;
+        letter-spacing: 0.08em !important;
+      }
+
+      .timeline {
+        gap: 10px !important;
+        margin-top: 14px !important;
+      }
+
+      .timeline-item {
+        grid-template-columns: 100px 1fr !important;
+        padding: 14px !important;
+        gap: 12px !important;
+        border-radius: 16px !important;
+      }
+
+      .timeline-time {
+        font-size: 18px !important;
+      }
+
+      .timeline-item h3 {
+        font-size: 18px !important;
+      }
+
+      .timeline-item p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+      }
+
+      .section-head {
+        margin-bottom: 14px !important;
+      }
+
+      .palette {
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 8px !important;
+        margin-top: 12px !important;
+      }
+
+      .palette-item {
+        min-height: 120px !important;
+        padding: 10px !important;
+        border-radius: 16px !important;
+      }
+
+      .palette-dot {
+        width: 34px !important;
+        height: 34px !important;
+        margin-bottom: 8px !important;
+        border-width: 4px !important;
+      }
+
+      .palette-item strong {
+        font-size: 13px !important;
+      }
+
+      .palette-item span {
+        font-size: 10px !important;
+        line-height: 1.35 !important;
+      }
+
+      .qr-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+      }
+
+      .qr-card {
+        padding: 12px !important;
+        border-radius: 18px !important;
+      }
+
+      .qr-card img {
+        border-radius: 14px !important;
+      }
+
+      .qr-card strong {
+        margin-top: 10px !important;
+        font-size: 16px !important;
+      }
+
+      .qr-card span {
+        font-size: 11px !important;
+        min-height: 30px !important;
+      }
+
+      .location-address {
+        margin-top: 12px !important;
+        padding: 14px !important;
+        border-radius: 16px !important;
+      }
+
+      .location-actions {
+        margin-top: 12px !important;
+        gap: 10px !important;
+      }
+
+      .map-card,
+      .map-card iframe {
+        min-height: 230px !important;
+        border-radius: 18px !important;
+      }
+
+      .footer {
+        padding: 24px 0 20px !important;
+      }
+
+      .footer-title {
+        font-size: 24px !important;
+      }
+
+      .footer-note {
+        font-size: 13px !important;
+      }
     }
 
   </style>
@@ -1493,7 +1694,7 @@
         <a href="#schedule">Программа</a>
         <a href="#dresscode">Дресс-код</a>
         <a href="#location">Навигатор</a>
-        <a href="#gallery">Галерея</a>
+        <a href="#wedding-photos">Фото</a>
         <a href="#details">Детали</a>
       </nav>
 
@@ -1593,15 +1794,7 @@
         <div class="kicker">День свадьбы</div>
         <h2>Программа</h2>
         <div class="timeline">
-
-          <div class="timeline-item">
-            <div class="timeline-time">15:30–16:00</div>
-            <div>
-              <h3>Сбор гостей</h3>
-              <p>Торжественная регистрация брака. ЗАГСЕ в с.Усть-Кан</p>
-            </div>
-          </div>
-          <div class="timeline-item">
+<div class="timeline-item">
             <div class="timeline-time">15:30–16:00</div>
             <div>
               <h3>Торжественная регистрация брака.</h3>
@@ -1662,56 +1855,46 @@
         </div>
       </div>
     </section>
-
-    <section id="gallery">
-      <div class="page gallery-box">
-        <div class="gallery-head">
-          <div>
-            <div class="kicker">Галерея</div>
-            <h2>Фото гостей</h2>
-            <p class="lead" style="margin-top: 18px;">
-              Фотографии загружаются из свадебного альбома ВКонтакте.
-              Нажмите на фото, чтобы открыть просмотр и листать снимки.
-            </p>
-          </div>
-
-          <div class="gallery-actions">
-            <a class="btn" href="https://vk.com/album-237681624_309119439" target="_blank" rel="noopener">
-              Загрузить фото
-            </a>
-            <a class="btn light" href="https://vk.com/album-237681624_309119439" target="_blank" rel="noopener">
-              Открыть альбом
-            </a>
-          </div>
+<section class="wedding-photos" id="wedding-photos">
+      <div class="page wedding-photos-box">
+        <div>
+          <div class="kicker">Свадебные фото</div>
+          <h2>Поделитесь моментами</h2>
+          <p class="lead" style="margin-top: 18px;">
+            Мы будем очень признательны, если во время свадьбы вы будете загружать фотографии.
+            Для нас важно сохранить живые моменты этого дня глазами наших гостей.
+          </p>
+          <p class="lead" style="margin-top: 14px;">
+            Отсканируйте один из QR-кодов и загрузите свои фотографии.
+          </p>
         </div>
 
-        <div class="vk-gallery-card">
-          <div id="vkGalleryStatus" class="vk-gallery-status">
-            Загрузка фотографий из ВК...
-          </div>
+        <div class="qr-grid">
+          <a class="qr-card" href="https://max.ru/join/r2FTI-zPWmcCwXuLWssIy3HQffYCHiaFYbajC0pzMJ4" target="_blank" rel="noopener">
+            <img src="qr1.jpg" alt="QR-код для загрузки свадебных фото в MAX">
+            <strong>QR 1</strong>
+            <span>Загрузить в MAX</span>
+            <span>Нажми меня</span>
+          </a>
 
-          <div id="vkPhotoGrid" class="vk-photo-grid" aria-label="Фотографии из ВК"></div>
+          <a class="qr-card" href="https://vk.com/album-213633228_284276506" target="_blank" rel="noopener">
+            <img src="qr2.jpg" alt="QR-код для загрузки свадебных фото в VK">
+            <strong>QR 2</strong>
+            <span>Загрузить в ВКонтакте</span>
+            <span>Нажми меня</span>
+          </a>
+
+          <a class="qr-card" href="https://forms.yandex.ru/u/6a23c842068ff00cb53a7965/?page=1" target="_blank" rel="noopener">
+            <img src="qr3.jpg" alt="QR-код для загрузки свадебных фото в Яндекс Диск">
+            <strong>QR 3</strong>
+            <span>Загрузить в Яндекс Диск</span>
+            <span>Нажми меня</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <div id="vkLightbox" class="vk-lightbox" aria-label="Просмотр фотографии">
-      <button class="vk-lightbox-close" type="button" aria-label="Закрыть">×</button>
-      <button class="vk-lightbox-btn vk-lightbox-prev" type="button" aria-label="Предыдущее фото">‹</button>
-      <img id="vkLightboxImage" src="" alt="Фото из свадебного альбома">
-      <button class="vk-lightbox-btn vk-lightbox-next" type="button" aria-label="Следующее фото">›</button>
-    </div>
-
-
-<div id="vkLightbox" class="vk-lightbox" aria-label="Просмотр фотографии">
-      <button class="vk-lightbox-close" type="button" aria-label="Закрыть">×</button>
-      <button class="vk-lightbox-btn vk-lightbox-prev" type="button" aria-label="Предыдущее фото">‹</button>
-      <img id="vkLightboxImage" src="" alt="Фото из свадебного альбома">
-      <button class="vk-lightbox-btn vk-lightbox-next" type="button" aria-label="Следующее фото">›</button>
-    </div>
-
-
-<section class="location" id="location">
+    <section class="location" id="location">
       <div class="page location-box">
         <div class="location-info">
           <div class="kicker">Как добраться</div>
@@ -1793,6 +1976,5 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
-  <script src="vk-gallery.js"></script>
 </body>
 </html>
